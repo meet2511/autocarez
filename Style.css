@@ -104,6 +104,33 @@ body {
     color: #fff !important;
     padding: 10px 20px;
     border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.cta-btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+.cta-btn:hover::after {
+    width: 200px;
+    height: 200px;
 }
 
 /* --- Hero Section --- */
@@ -151,6 +178,15 @@ body {
     z-index: 1;
 }
 
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 .hero-content h1 {
     font-size: 50px;
     margin-bottom: 20px;
@@ -166,10 +202,19 @@ body {
     color: #fff;
     padding: 15px 30px;
     text-decoration: none;
-    margin-right: 15px;
     border-radius: 5px;
     display: inline-block;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.hero-btns .btn-primary:hover {
+    background: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5);
+    letter-spacing: 0.5px;
 }
 
 .hero-btns .btn-secondary {
@@ -179,7 +224,16 @@ body {
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.hero-btns .btn-secondary:hover {
+    background: #fff;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
 }
 
 /* --- Services Section --- */
@@ -306,12 +360,14 @@ body {
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .toggle-btn.active, .toggle-btn:hover {
     background: var(--primary-blue);
     color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.35);
+    transform: translateY(-2px);
 }
 
 /* New Layout Container */
@@ -505,11 +561,38 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.btn-card:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-card.full-filled {
     background: var(--primary-blue);
     color: #fff;
+}
+
+.btn-card.full-filled:hover {
+    background: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.45);
 }
 
 /* --- Feedback Section --- */
@@ -551,6 +634,13 @@ body {
     background: transparent;
     border: 1px solid var(--primary-blue);
     color: var(--primary-blue);
+}
+
+.btn-card.full-outline:hover {
+    background: var(--primary-blue);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
 }
 
 /* --- Footer --- */
